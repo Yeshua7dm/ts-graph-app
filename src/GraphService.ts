@@ -86,6 +86,18 @@ export async function getUnreadMails(authProvider: AuthCodeMSALBrowserAuthentica
         .top(10)
         .get();
 
-        return response.value;
+    return response.value;
 }
 // TODO: this is where update emails too will be placed
+export async function updateMail(authProvider: AuthCodeMSALBrowserAuthenticationProvider, id: string): Promise<Message> {
+    ensureClient(authProvider);
+
+    const message = {
+        isRead: true
+    }
+    const response: Message = await graphClient!
+        .api(`/me/messages/${id}`)
+        .update(message);
+
+    return response;
+}
