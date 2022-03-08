@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import {
-  NavLink as RouterNavLink,
-  RouteComponentProps,
-} from "react-router-dom";
-import { Table } from "react-bootstrap";
-import { findIana } from "windows-iana";
-import { Event } from "microsoft-graph";
-import { getUserWeekCalendar } from "../GraphService";
-import { useAppContext } from "../AppContext";
 import { AuthenticatedTemplate } from "@azure/msal-react";
 import { add, format, getDay, parseISO } from "date-fns";
 import { endOfWeek, startOfWeek } from "date-fns/esm";
+import { Event } from "microsoft-graph";
+import { useEffect, useState } from "react";
+import { Table } from "react-bootstrap";
+import {
+  NavLink as RouterNavLink,
+  RouteComponentProps
+} from "react-router-dom";
+import { findIana } from "windows-iana";
+import { useAppContext } from "../AppContext";
+import { getUserWeekCalendar } from "../GraphService";
+import "../styles/Calendar.css";
 import CalendarDayRow from "./CalendarDayRow";
-import "./Calendar.css";
 
 export default function Calendar(props: RouteComponentProps) {
   const app = useAppContext();
@@ -48,9 +48,9 @@ export default function Calendar(props: RouteComponentProps) {
           {format(weekStart, "MMMM d, yyyy")} -{" "}
           {format(weekEnd, "MMMM d, yyyy")}
         </h1>
-        <RouterNavLink to="/newevent" className="btn btn-light btn-sm" exact>
+        {/* <RouterNavLink to="/newevent" className="btn btn-light btn-sm" exact>
           New event
-        </RouterNavLink>
+        </RouterNavLink> */}
       </div>
       <div className="calendar-week">
         <div className="table-responsive">
