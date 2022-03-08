@@ -7,7 +7,7 @@ This App was built using
 ## Development
 
 ## How To Use?
-The application is deployed on [https://ms-email-joshua.netlify.app](Netlify) and can be accessed thus by anyone
+The application is deployed on [Netlify](https://ms-email-joshua.netlify.app) and can be accessed thus by anyone
     a Open the App
     b Log In to your Microsoft Email
     c Click on the `Emails` link in the navigation bar
