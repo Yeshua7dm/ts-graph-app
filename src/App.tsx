@@ -8,20 +8,25 @@ import ErrorMessage from './components/ErrorMessage';
 import NavBar from './components/NavBar';
 import Welcome from './components/Welcome';
 import 'bootstrap/dist/css/bootstrap.css';
+type AppProps = {
+  pca: IPublicClientApplication
+};
 
-export default function App() {
+export default function App({ pca }: AppProps) {
   return (
-    <ProvideAppContext>
-      <Router>
-        <NavBar />
-        <Container>
-          <ErrorMessage />
-          <Route exact path="/"
-            render={(props) =>
-              <Welcome {...props} />
-            } />
-        </Container>
-      </Router>
-    </ProvideAppContext>
+    <MsalProvider instance={pca}>
+      <ProvideAppContext>
+        <Router>
+          <NavBar />
+          <Container>
+            <ErrorMessage />
+            <Route exact path="/"
+              render={(props) =>
+                <Welcome {...props} />
+              } />
+          </Container>
+        </Router>
+      </ProvideAppContext>
+    </MsalProvider>
   );
 }
