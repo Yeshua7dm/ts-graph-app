@@ -75,7 +75,7 @@ export async function getUserWeekCalendar(authProvider: AuthCodeMSALBrowserAuthe
         return response.value;
     }
 }
-// TODO: this is where the functions to get emails
+// this is where the functions to get emails
 export async function getUnreadMails(authProvider: AuthCodeMSALBrowserAuthenticationProvider): Promise<Message[]> {
     ensureClient(authProvider);
 
@@ -88,7 +88,7 @@ export async function getUnreadMails(authProvider: AuthCodeMSALBrowserAuthentica
 
     return response.value;
 }
-// TODO: this is where update emails too will be placed
+// this is where update emails too will be placed
 export async function updateMail(authProvider: AuthCodeMSALBrowserAuthenticationProvider, id: string): Promise<Message> {
     ensureClient(authProvider);
 

@@ -15,7 +15,6 @@ import { InteractionType, PublicClientApplication } from "@azure/msal-browser";
 import { useMsal } from "@azure/msal-react";
 // import the functions from graph service here
 import { getUser } from "./GraphService";
-import { Message } from "microsoft-graph";
 
 export interface AppUser {
   displayName?: string;

@@ -16,7 +16,6 @@ export default function AllMails(props: RouteComponentProps) {
   const [selectedMail, setSelectedMail] = useState<Message>();
   const [mailBody, setMailBody] = useState<string>("");
   const [show, setShow] = useState<boolean>(false);
-  // const [allRead, setAllRead] = useState(0);
 
   useEffect(() => {
     const loadMails = async () => {

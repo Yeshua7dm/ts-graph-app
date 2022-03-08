@@ -1,14 +1,10 @@
-import { EmailAddress } from "microsoft-graph";
-import React from "react";
-
 import { Card, Button } from "react-bootstrap";
-
 interface SingleMailProps {
   isRead: boolean;
   subject: string;
   bodyPreview: string;
   senderAddress: string;
-  senderName?: string;
+  senderName: string;
   mailId: string;
   readMail?: any;
 }
@@ -26,7 +22,6 @@ const SingleMail = ({
     <Card
       bg="light"
       text="dark"
-      //   style={{ width: "80%" }}
       className="mb-2 mx-auto"
     >
       <Card.Header className="text-right">
