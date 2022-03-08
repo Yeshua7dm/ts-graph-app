@@ -2,7 +2,7 @@ import { Client, GraphRequestOptions, PageCollection, PageIterator } from '@micr
 import { AuthCodeMSALBrowserAuthenticationProvider } from '@microsoft/microsoft-graph-client/authProviders/authCodeMsalBrowser';
 import { endOfWeek, startOfWeek } from 'date-fns';
 import { zonedTimeToUtc } from 'date-fns-tz';
-import { User, Event } from 'microsoft-graph';
+import { User, Event, Message } from 'microsoft-graph';
 
 let graphClient: Client | undefined = undefined;
 
@@ -76,4 +76,16 @@ export async function getUserWeekCalendar(authProvider: AuthCodeMSALBrowserAuthe
     }
 }
 // TODO: this is where the functions to get emails
+export async function getUnreadMails(authProvider: AuthCodeMSALBrowserAuthenticationProvider): Promise<Message[]> {
+    ensureClient(authProvider);
+
+    const response: PageCollection = await graphClient!
+        .api(`/me/mailFolders('Inbox')/messages`)
+        .select('body,sender,isRead,subject,bodyPreview')
+        .filter('isRead eq false')
+        .top(10)
+        .get();
+
+        return response.value;
+}
 // TODO: this is where update emails too will be placed

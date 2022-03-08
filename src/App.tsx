@@ -4,7 +4,7 @@ import { MsalProvider } from '@azure/msal-react'
 import { IPublicClientApplication } from '@azure/msal-browser';
 
 import Calendar from './components/Calendar';
-import AllMails from './AllMails';
+import AllMails from './components/AllMails';
 import ProvideAppContext from './AppContext';
 import ErrorMessage from './components/ErrorMessage';
 import NavBar from './components/NavBar';
@@ -32,7 +32,7 @@ export default function App({ pca }: AppProps) {
               } />
             <Route exact path="/emails"
               render={(props) =>
-                <AllMails />
+                <AllMails {...props} />
               } />
           </Container>
         </Router>

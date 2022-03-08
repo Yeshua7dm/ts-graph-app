@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import {
   NavLink as RouterNavLink,
-  RouteComponentProps
+  RouteComponentProps,
 } from "react-router-dom";
 import { findIana } from "windows-iana";
 import { useAppContext } from "../AppContext";
