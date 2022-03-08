@@ -5,7 +5,6 @@ import { Spinner, Tab, Tabs, Modal, Button } from "react-bootstrap";
 import { RouteComponentProps } from "react-router-dom";
 import { useAppContext } from "../AppContext";
 import { getUnreadMails, updateMail } from "../GraphService";
-import "../styles/Calendar.css";
 import SingleMail from "./SingleMail";
 
 export default function AllMails(props: RouteComponentProps) {
