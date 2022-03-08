@@ -22,7 +22,7 @@ export default function AllMails(props: RouteComponentProps) {
 
   useEffect(() => {
     const loadMails = async () => {
-      if (app.user && unreadMails.length < 1) {
+      if (app.user && unreadMails.length < 10) {
         try {
           const unreadMails = await getUnreadMails(app.authProvider!);
           setUnreadMails(unreadMails);
