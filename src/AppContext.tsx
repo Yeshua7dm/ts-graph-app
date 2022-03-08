@@ -68,7 +68,7 @@ export default function ProvideAppContext({ children }: ProvideAppContextProps) 
 
 // function to provide app context
 function useProvideAppContext() {
-// on load, check if there is a user, if none, display an error message
+  // on load, check if there is a user, if none, display an error message
   useEffect(() => {
     const checkUser = async () => {
       if (!user) {
