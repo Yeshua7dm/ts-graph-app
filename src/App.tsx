@@ -4,9 +4,9 @@ import { MsalProvider } from '@azure/msal-react'
 import { IPublicClientApplication } from '@azure/msal-browser';
 
 import ProvideAppContext from './AppContext';
-import ErrorMessage from './ErrorMessage';
-import NavBar from './NavBar';
-import Welcome from './Welcome';
+import ErrorMessage from './components/ErrorMessage';
+import NavBar from './components/NavBar';
+import Welcome from './components/Welcome';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function App() {

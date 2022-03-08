@@ -9,7 +9,7 @@ import {
 } from 'react-bootstrap';
 import { AuthenticatedTemplate, UnauthenticatedTemplate } from '@azure/msal-react';
 
-import { AppUser, useAppContext } from './AppContext';
+import { AppUser, useAppContext } from '../AppContext';
 
 interface UserAvatarProps {
     user: AppUser
